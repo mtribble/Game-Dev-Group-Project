@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
     public int HP, XP, Level, Attack, Defense;
     public Inventory inventory;
 
 
-    private static PlayerManager _instance;
+    private static BattleManager _instance;
 
-    public static PlayerManager Instance 
+    public static BattleManager Instance 
     { 
         get { return _instance; } 
     } 

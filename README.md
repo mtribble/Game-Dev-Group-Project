@@ -8,7 +8,7 @@ Script descriptions:
 	OverWorldItem.cs : Contains logic to allow item to be collected by player
 	OverWorldPlayer.cs : Player movement, picks up items, will trigger battles
 	signpost.cs : Causes dialog to appear when player touches boxCollider
-	PlayerManager: this is a singleton preserved between scenes that holds player stats and inventory
+	BattelManager: this is a singleton preserved between scenes that holds player and enemy stats and inventory
 		can be accessed globaly through PlayerManager.Instance.
 
 how to create new item:
