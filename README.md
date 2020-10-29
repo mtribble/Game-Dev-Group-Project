@@ -16,7 +16,7 @@ Script descriptions:
 	
 	signpost.cs : Causes dialog to appear when player touches boxCollider
 	
-	BattelManager: this is a singleton preserved between scenes that holds player and enemy stats and inventory
+	BattleManager: this is a singleton preserved between scenes that holds player and enemy stats and inventory
 		can be accessed globaly through PlayerManager.Instance.
 
 
