@@ -6,12 +6,9 @@ public class overWorldPlayer : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
-
-    Inventory inventory;
     
     void Start () {
         rb = GetComponent<Rigidbody2D>();
-        inventory = new Inventory();
     }
 
     void Update () {
@@ -35,8 +32,8 @@ public class overWorldPlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Item"){
             Item item = col.gameObject.GetComponent<OverWorldItem>().getItem();
-            this.inventory.addItem(item);
-            this.inventory.debugPrint();
+            PlayerManager.Instance.inventory.addItem(item);
+            PlayerManager.Instance.inventory.debugPrint();
             Destroy(col.gameObject);
         }
     }
