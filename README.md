@@ -21,6 +21,7 @@ Script descriptions:
 
 
 how to create new item:
+
 	1. add entry to itemDatabase.cs buildDB method (itemID, Name, Description, Stats)
 	
 	2. add sprite to Assets/Resources/Items/ (note filename must be the same as item name from step 1)

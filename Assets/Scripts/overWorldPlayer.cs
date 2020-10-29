@@ -32,8 +32,8 @@ public class overWorldPlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.gameObject.tag == "Item"){
             Item item = col.gameObject.GetComponent<OverWorldItem>().getItem();
-            PlayerManager.Instance.inventory.addItem(item);
-            PlayerManager.Instance.inventory.debugPrint();
+            BattleManager.Instance.inventory.addItem(item);
+            BattleManager.Instance.inventory.debugPrint();
             Destroy(col.gameObject);
         }
     }
