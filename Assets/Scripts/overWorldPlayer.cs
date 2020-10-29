@@ -36,6 +36,11 @@ public class overWorldPlayer : MonoBehaviour
             BattleManager.Instance.inventory.debugPrint();
             Destroy(col.gameObject);
         }
+
+        if(col.gameObject.tag == "Enemy"){
+            Debug.Log("Starting Battle");
+            Destroy(col.gameObject);
+        }
     }
 
 
