@@ -61,4 +61,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9ca2558caab30489cb7d90ec61c0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  positionShiftOnExit: -0.3

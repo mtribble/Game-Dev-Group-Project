@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] private string toScene;
+    [SerializeField] private string toScene = "Text_Overworld";
     private SceneController sceneController;
     void Start()
     {
