@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class overWorldPlayer : MonoBehaviour
 {
@@ -29,7 +30,10 @@ public class overWorldPlayer : MonoBehaviour
         }
     }
 
+
     void OnTriggerEnter2D(Collider2D col){
+        Debug.Log("Collison with:" + col.gameObject.tag);
+
         if(col.gameObject.tag == "Item"){
             Item item = col.gameObject.GetComponent<OverWorldItem>().getItem();
             BattleManager.Instance.inventory.addItem(item);
