@@ -16,9 +16,15 @@ public class Inventory
 
     public void debugPrint(){
         string s = "Inventory: ";
+
         foreach (Item i in itemList)
         {
-            s += i.name + " ";
+            s += "\n" + i.name + ": ";
+
+            foreach (KeyValuePair<string, int> stat in ItemDatabase.Instance.GetItem(i.name).stats)
+            {
+                s += stat.Key + ": " + stat.Value.ToString() + " ";
+            }
         }
         Debug.Log(s);
     }

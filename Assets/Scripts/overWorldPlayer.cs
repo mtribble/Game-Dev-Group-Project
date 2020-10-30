@@ -12,7 +12,10 @@ public class overWorldPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update () {
+
+
+    private void FixedUpdate()
+    {
         handleMovement();
         handlePopups();
     }
@@ -20,7 +23,7 @@ public class overWorldPlayer : MonoBehaviour
     void handleMovement() {
         float mH = Input.GetAxis ("Horizontal");
         float mV = Input.GetAxis ("Vertical");
-        rb.velocity = new Vector3 (mH * speed * Time.deltaTime, mV * speed * Time.deltaTime, 0);
+        rb.velocity = new Vector3 (mH * speed, mV * speed, 0);
     }
 
     void handlePopups() {
@@ -32,7 +35,6 @@ public class overWorldPlayer : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D col){
-        Debug.Log("Collison with:" + col.gameObject.tag);
 
         if(col.gameObject.tag == "Item"){
             Item item = col.gameObject.GetComponent<OverWorldItem>().getItem();

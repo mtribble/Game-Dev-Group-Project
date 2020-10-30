@@ -47,7 +47,6 @@ public class SceneController : MonoBehaviour
         // Do anything after proper scene has been loaded
         if (SceneManager.GetActiveScene().name == sceneName)
         {
-            Debug.Log(string.Format("Moving to POS to: {0}, {1}, {2}", prev_overworld_pos.x, prev_overworld_pos.y, prev_overworld_pos.z));
             GameObject player = GameObject.FindGameObjectWithTag("Player");
             prev_overworld_pos.y += positionShiftOnExit;
             player.transform.position = prev_overworld_pos;
@@ -68,9 +67,6 @@ public class SceneController : MonoBehaviour
         else
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            Debug.Log(string.Format("SETTING POS to: {0}, {1}, {2}", player.transform.position.x, player.transform.position.y, player.transform.position.z));
-
             prev_overworld_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
             SceneManager.LoadScene(sceneName);
         }
