@@ -14,6 +14,10 @@ public class Inventory
         itemList.Add(item);
     }
 
+    public List<Item> GetItems(){
+        return itemList;
+    }
+
     public void debugPrint(){
         string s = "Inventory: ";
 

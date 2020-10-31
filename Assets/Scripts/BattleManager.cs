@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattleManager : MonoBehaviour
 {
     public int playerHP, playerXP, playerLevel, playerAttack, playerDefense;
-    public Inventory inventory;
+    public Inventory equiped, inventory;
 
 
     private static BattleManager _instance;

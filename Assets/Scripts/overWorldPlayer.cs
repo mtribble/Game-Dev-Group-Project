@@ -17,20 +17,12 @@ public class overWorldPlayer : MonoBehaviour
     private void FixedUpdate()
     {
         handleMovement();
-        handlePopups();
     }
 
     void handleMovement() {
         float mH = Input.GetAxis ("Horizontal");
         float mV = Input.GetAxis ("Vertical");
         rb.velocity = new Vector3 (mH * speed, mV * speed, 0);
-    }
-
-    void handlePopups() {
-        if (Input.GetKey("i"))
-        {
-            Debug.Log("toggle inventory");
-        }
     }
 
 
