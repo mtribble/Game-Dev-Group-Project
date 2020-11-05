@@ -232,6 +232,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 183019489, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165429485, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4042969
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165429485, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.4111938
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472764562, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -176.7998
+      objectReference: {fileID: 0}
     - target: {fileID: 5807563607314064557, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.295391
@@ -279,6 +295,10 @@ PrefabInstance:
     - target: {fileID: 5807563607314064559, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
       propertyPath: m_Name
       value: Game Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 5807563607314064559, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}

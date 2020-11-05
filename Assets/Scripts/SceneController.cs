@@ -8,10 +8,13 @@ public class SceneController : MonoBehaviour
 {
     public float positionShiftOnExit;
     public static string prevScene = "";
-    public static string currentScene = "";
+    private static string currentScene = "";
+
+    private Stack<(string,Vector3)> prevScenes;
 
     private Vector3 prev_overworld_pos;
 
+    #region Singleton
     private static SceneController _instance;
 
     public static SceneController Instance
@@ -29,15 +32,12 @@ public class SceneController : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
+        prevScenes = new Stack<(string, Vector3)>();
     }
-
-    public virtual void Start()
-    {
-        
-    }
+    #endregion
 
     //from https://forum.unity.com/threads/stop-a-function-till-scene-is-loaded.546646/
-    IEnumerator movePlayerAfterLoad(string sceneName)
+    IEnumerator movePlayerAfterLoad(string sceneName, Vector3 pos)
     {
         while (SceneManager.GetActiveScene().name != sceneName)
         {
@@ -48,29 +48,34 @@ public class SceneController : MonoBehaviour
         if (SceneManager.GetActiveScene().name == sceneName)
         {
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            prev_overworld_pos.y += positionShiftOnExit;
-            player.transform.position = prev_overworld_pos;
+            pos.y += positionShiftOnExit;
+            player.transform.position = pos;
         }
         currentScene = sceneName;
     }
 
-    public void LoadScene(string sceneName)
+
+    public void LoadScene(string nextScene)
     {
+        if (prevScenes.Count != 0){
+            Debug.Log("Prev scene: " + prevScenes.Peek().Item1+ ":" + prevScenes.Peek().Item1.Length.ToString());
+        }
+        Debug.Log("next scene: " + nextScene+ ":" + nextScene.Length.ToString());
+
         currentScene = SceneManager.GetActiveScene().name;
         
 
-        if (prevScene == "Test_Overworld")
+        if (prevScenes.Count != 0 && prevScenes.Peek().Item1 == nextScene)
         {
-            SceneManager.LoadScene(sceneName);
-            StartCoroutine(movePlayerAfterLoad(sceneName));
+            Debug.Log("Moving to prev pos");
+            SceneManager.LoadScene(nextScene);
+            StartCoroutine(movePlayerAfterLoad(nextScene, prevScenes.Pop().Item2));
         }
         else
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            prev_overworld_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
-            SceneManager.LoadScene(sceneName);
+            Debug.Log("pushing scene: " + currentScene + ":" + currentScene.Length.ToString());
+            prevScenes.Push((currentScene, GameObject.FindGameObjectWithTag("Player").transform.position));
+            SceneManager.LoadScene(nextScene);
         }
-        prevScene = currentScene;
-
     }
 }

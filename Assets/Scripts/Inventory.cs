@@ -10,8 +10,12 @@ public class Inventory
         itemList = new List<Item>();
     }
 
-    public void addItem(Item item){
+    public void AddItem(Item item){
         itemList.Add(item);
+    }
+
+    public void AddItem(int id){
+        itemList.Add(ItemDatabase.Instance.GetItem(id));
     }
 
     public List<Item> GetItems(){
