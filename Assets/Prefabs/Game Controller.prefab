@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5807563607314064557}
   - component: {fileID: 5807563607314064558}
   - component: {fileID: 5807563607314064556}
+  - component: {fileID: 2054162941}
+  - component: {fileID: 2054162945}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -44,11 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8001867e70a01e468b0842cc31fe08a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 10
-  XP: 0
-  Level: 1
-  Attack: 5
-  Defense: 5
 --- !u!114 &5807563607314064556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,4 +58,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9ca2558caab30489cb7d90ec61c0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionShiftOnExit: -0.3
+  positionShiftOnExit: -0.5
+--- !u!114 &2054162941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807563607314064559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3e0fa660c6bca45974bf305cffb01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2054162945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5807563607314064559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8eb31095407e467459e529956fb69f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUITransform: {fileID: 0}
+  pauseText: {fileID: 0}

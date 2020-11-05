@@ -12,7 +12,7 @@ public class Item
     public int id;
     public string name;
     public string description;
-    public Sprite sprite;
+    public Sprite icon;
     public Dictionary<string, int> stats = new Dictionary<string, int>();
 
     public Item(int id, string name, string description, Dictionary<string, int> stats){
@@ -20,7 +20,7 @@ public class Item
         this.name = name;
         this.description = description;
         this.stats = stats;
-        this.sprite = Resources.Load<Sprite>("Sprites/Items/" + name);
+        this.icon = Resources.Load<Sprite>("Sprites/Items/" + name);
     }
 
     //copy constuctor
@@ -29,6 +29,6 @@ public class Item
         this.name = item.name;
         this.description = item.description;
         this.stats = item.stats;
-        this.sprite = Resources.Load<Sprite>("Sprites/Items/" + item.name);
+        this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.name);
     }
 }
