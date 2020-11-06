@@ -24,22 +24,6 @@ public class overWorldPlayer : MonoBehaviour
     void handleMovement() {
         float mH = Input.GetAxis ("Horizontal");
         float mV = Input.GetAxis ("Vertical");
-        if(mH != 0){
-            if(mH > 0){
-                lastDir = "UP";
-            }
-            else{
-                lastDir = "DOWN";
-            }
-        }
-        if(mV != 0){
-            if(mV > 0){
-                lastDir = "RIGHT";
-            }
-            else{
-                lastDir = "LEFT";
-            }
-        }
         rb.velocity = new Vector3 (mH * speed, mV * speed, 0);
     }
     
@@ -56,7 +40,7 @@ public class overWorldPlayer : MonoBehaviour
 
         if(col.gameObject.tag == "Enemy"){
             Debug.Log("Starting Battle");
-            SceneController.Instance.LoadScene("Test_Battle");
+            SceneController.Instance.LoadScene("Test_Battle", rb.velocity);
             Destroy(col.gameObject);
         }
     }

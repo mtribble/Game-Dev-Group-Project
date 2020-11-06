@@ -16,6 +16,14 @@ public class InventoryUI : MonoBehaviour
     void Awake(){
         background = transform.Find("Background");
         prefab = background.Find("ItemUIPrefab");
+        SceneController.Instance.onInventoryDisplay += DrawInventory;
+        SceneController.Instance.onInventoryClear += clear;
+    }
+
+    private void OnDestroy()
+    {
+        SceneController.Instance.onInventoryDisplay -= DrawInventory;
+        SceneController.Instance.onInventoryClear -= clear;
     }
 
 
@@ -25,8 +33,11 @@ public class InventoryUI : MonoBehaviour
                 GameObject.Destroy(child.gameObject);
             }
         }
+        background.gameObject.SetActive(false);
     }
     public void DrawInventory(){
+        background.gameObject.SetActive(true);
+
         int x = 0;
         int y = 0;
         
