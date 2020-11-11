@@ -32,9 +32,9 @@ public class overWorldPlayer : MonoBehaviour
 
         if(col.gameObject.tag == "Item"){
             int itemID = col.gameObject.GetComponent<OverWorldItem>().ItemID;
-            PlayerManager.Instance.player.inventory.debugPrint();
-            PlayerManager.Instance.player.inventory.AddItem(itemID);
-            PlayerManager.Instance.player.inventory.debugPrint();
+            PlayerManager.Instance.inventory.debugPrint();
+            PlayerManager.Instance.inventory.AddItem(itemID);
+            PlayerManager.Instance.inventory.debugPrint();
             Destroy(col.gameObject);
         }
 

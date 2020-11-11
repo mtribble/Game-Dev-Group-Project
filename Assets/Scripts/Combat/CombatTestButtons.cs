@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CombatTestButtons : MonoBehaviour
 {
-    Charater player, enemy;
+    Character player, enemy;
 
     private void Start()
     {
@@ -14,7 +14,7 @@ public class CombatTestButtons : MonoBehaviour
 
 
     void SetHealth(int newHP){
-        player.hp = newHP;
+        player.stat.hp = newHP;
     }
     
     public void randAttack()
@@ -23,8 +23,8 @@ public class CombatTestButtons : MonoBehaviour
         int enemyDamage = Random.Range(0, 3);
         if(Time.timeScale != 0)// this should be replaced
         {
-            player.hp -= playerDamage;
-            enemy.hp -= enemyDamage;
+            player.stat.hp -= playerDamage;
+            enemy.stat.hp -= enemyDamage;
         }
         
     }

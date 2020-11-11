@@ -41,7 +41,7 @@ public class InventoryUI : MonoBehaviour
         int x = 0;
         int y = 0;
         
-        foreach (Item item in PlayerManager.Instance.player.inventory.GetItems())
+        foreach (Item item in PlayerManager.Instance.inventory.GetItems())
         {
             RectTransform itemRectTransform = Instantiate(prefab, background).GetComponent<RectTransform>();
             itemRectTransform.gameObject.SetActive(true);

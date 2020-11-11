@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthDisplay : MonoBehaviour
 {
-    Charater enemy;
+    Character enemy;
     int enemyHealth;
     Text text;
 
@@ -17,7 +17,7 @@ public class EnemyHealthDisplay : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        enemyHealth = enemy.hp;
+        enemyHealth = enemy.stat.hp;
         text.text = "Enemy HP: " + enemyHealth.ToString();
     }
 }

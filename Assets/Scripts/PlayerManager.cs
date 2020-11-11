@@ -6,7 +6,8 @@ using UnityEngine;
 // it holds data about the player and when nessesary, about the enemy character
 public class PlayerManager : MonoBehaviour
 {
-    public Charater player, enemy;
+    public Character player, enemy;
+    public Inventory inventory;
 
 
     #region Singleton
@@ -27,8 +28,8 @@ public class PlayerManager : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
-        player = new Charater();
-        enemy = new Charater();
+        player = new Character();
+        enemy = new Character();
     } 
 
     #endregion

@@ -36,17 +36,17 @@ public class TEST_CombatTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(PlayerManager.Instance.player.hp <= 0){
+        if(PlayerManager.Instance.player.stat.hp <= 0){
             
-            PlayerManager.Instance.player.hp = 10;
-            PlayerManager.Instance.enemy.hp = 10;
+            PlayerManager.Instance.player.stat.hp = 10;
+            PlayerManager.Instance.enemy.stat.hp = 10;
             StartCoroutine(DisplayLoseAndLoad());
         }
-        if (PlayerManager.Instance.enemy.hp <= 0)
+        if (PlayerManager.Instance.enemy.stat.hp <= 0)
         {
 
-            PlayerManager.Instance.player.hp = 10;
-            PlayerManager.Instance.enemy.hp = 10;
+            PlayerManager.Instance.player.stat.hp = 10;
+            PlayerManager.Instance.enemy.stat.hp = 10;
             StartCoroutine(DisplayWinAndLoad());
         }
     }
