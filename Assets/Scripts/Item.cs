@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Item
 {
-    public enum AttackTypes{
+    public enum AttackTypes
+    {
         Normal,
         TestType
     }
@@ -13,6 +14,9 @@ public class Item
     public string name;
     public string description;
     public Sprite icon;
+    //public Stats stats;
+    //public ItemType type;
+
     public Dictionary<string, int> stats = new Dictionary<string, int>();
 
     public Item(int id, string name, string description, Dictionary<string, int> stats){
