@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,16 +15,5 @@ public class Stats
         this.mag = mag;
         this.magdef = magdef;
         this.speed = speed;
-    }
-
-    public Stats()
-    {
-        this.hp = 100;
-        this.maxhp = 100;
-        this.str = 20;
-        this.def = 5;
-        this.mag = 20;
-        this.magdef = 5;
-        this.speed = 15;
     }
 }
