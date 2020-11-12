@@ -15,7 +15,19 @@ public class InventoryUI : MonoBehaviour
 
     void Awake(){
         background = transform.Find("Background");
+<<<<<<< Updated upstream:Assets/Scripts/InventoryUI.cs
         prefab = background.Find("ItemUIPrefab");
+=======
+        prefab = background.Find("InventoryItem");
+        SceneController.Instance.onInventoryDisplay += DrawInventory;
+        SceneController.Instance.onInventoryClear += clear;
+    }
+
+    private void OnDestroy()
+    {
+        SceneController.Instance.onInventoryDisplay -= DrawInventory;
+        SceneController.Instance.onInventoryClear -= clear;
+>>>>>>> Stashed changes:Assets/Scripts/UI/InventoryUI.cs
     }
 
 
@@ -35,8 +47,8 @@ public class InventoryUI : MonoBehaviour
             RectTransform itemRectTransform = Instantiate(prefab, background).GetComponent<RectTransform>();
             itemRectTransform.gameObject.SetActive(true);
             itemRectTransform.anchoredPosition = new Vector2(x * (itemRectTransform.rect.width + xPadding) , -1 * y * (itemRectTransform.rect.height + yPadding));
-            Image image = itemRectTransform.Find("Icon").GetComponent<Image>();
-            image.sprite = item.icon;
+            InventoryItem invItem = itemRectTransform.GetComponent<InventoryItem>();
+            invItem.SetItem(item);
 
             x++;
             if(x > columns){
@@ -49,4 +61,6 @@ public class InventoryUI : MonoBehaviour
             }
         }   
     }
+
+
 }

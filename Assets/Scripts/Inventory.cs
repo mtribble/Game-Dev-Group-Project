@@ -22,6 +22,16 @@ public class Inventory
         return itemList;
     }
 
+    public bool RemoveItem(Item item)
+    {
+        return itemList.Remove(item);
+    }
+
+    public bool RemoveItem(int id)
+    {
+        return itemList.Remove(ItemDatabase.Instance.GetItem(id));
+    }
+
     public void debugPrint(){
         string s = "Inventory: ";
 
