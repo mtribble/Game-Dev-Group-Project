@@ -16,4 +16,15 @@ public class Stats
         this.magdef = magdef;
         this.speed = speed;
     }
+
+    public Stats()
+    {
+        this.hp = 10;
+        this.maxhp = 10;
+        this.str = 10;
+        this.def = 10;
+        this.mag = 10;
+        this.magdef = 10;
+        this.speed = 10;
+    }
 }

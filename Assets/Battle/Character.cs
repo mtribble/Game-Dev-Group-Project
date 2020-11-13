@@ -12,4 +12,10 @@ public class Character
         stat = new Stats(hp, maxhp, str, def, mag, magdef, speed);
         this.attacks = attacks;
     }
+
+    public Character ()
+    {
+        stat = new Stats();
+        this.attacks = new List<Attack>();
+    }
 }

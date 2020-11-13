@@ -15,19 +15,7 @@ public class InventoryUI : MonoBehaviour
 
     void Awake(){
         background = transform.Find("Background");
-<<<<<<< Updated upstream:Assets/Scripts/InventoryUI.cs
         prefab = background.Find("ItemUIPrefab");
-=======
-        prefab = background.Find("InventoryItem");
-        SceneController.Instance.onInventoryDisplay += DrawInventory;
-        SceneController.Instance.onInventoryClear += clear;
-    }
-
-    private void OnDestroy()
-    {
-        SceneController.Instance.onInventoryDisplay -= DrawInventory;
-        SceneController.Instance.onInventoryClear -= clear;
->>>>>>> Stashed changes:Assets/Scripts/UI/InventoryUI.cs
     }
 
 
@@ -42,7 +30,7 @@ public class InventoryUI : MonoBehaviour
         int x = 0;
         int y = 0;
         
-        foreach (Item item in PlayerManager.Instance.player.inventory.GetItems())
+        foreach (Item item in PlayerManager.Instance.inventory.GetItems())
         {
             RectTransform itemRectTransform = Instantiate(prefab, background).GetComponent<RectTransform>();
             itemRectTransform.gameObject.SetActive(true);
