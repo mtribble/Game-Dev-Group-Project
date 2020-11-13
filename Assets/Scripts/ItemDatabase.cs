@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ItemDatabase : MonoBehaviour
 {
     private static ItemDatabase _instance;
@@ -10,6 +11,8 @@ public class ItemDatabase : MonoBehaviour
     { 
         get { return _instance; } 
     } 
+
+    
 
     private void Awake() 
     { 
@@ -24,6 +27,8 @@ public class ItemDatabase : MonoBehaviour
         buildDB();
     } 
 
+    
+
    public List<Item> items = new List<Item>();
 
     public Item GetItem(int id){
@@ -35,45 +40,52 @@ public class ItemDatabase : MonoBehaviour
     void buildDB(){
         items = new List<Item>{
                 //Axe
-                new Item(0, "Axe", "this is the axe weapon description", 
-                new Dictionary<string, int>{
-                    {"Type", (int) Item.AttackTypes.Normal},
-                    {"Attack", 10},
-                    {"Defence", 5}
-                }),
-
+                new Item(0, "Axe", "A large axe. It's large enough to block some attacks, but also makes it more difficult to move quickly and cast spells",
+                new Stats (0,0,20,5,-5,0,-10),
+                1
+                ),
+                
                 //Club
-                new Item(1, "Club", "this is the club weapon description", 
-                new Dictionary<string, int>{
-                    {"Type", (int) Item.AttackTypes.Normal},
-                    {"Attack", 15},
-                    {"Defence", 0}
-                }),
+                new Item(1, "Club", "A club. It's quick to bash something with, but not very powerful",
+                new Stats (0,0,10,0,0,0,5),
+                1                   
+                ),
 
                 //Spear
-                new Item(2, "Spear", "this is the spear weapon description", 
-                new Dictionary<string, int>{
-                    {"Type", (int) Item.AttackTypes.Normal},
-                    {"Attack", 12},
-                    {"Defence", 5}
-                }),
+                new Item(2, "Spear", "The spear's reach provides a mix of offense and defense",
+                new Stats (0,0,15,5,0,0,0),
+                1
+                ),
 
                 //Staff
-                new Item(3, "Staff", "this is the staff weapon description", 
-                new Dictionary<string, int>{
-                    {"Type", (int) Item.AttackTypes.TestType},
-                    {"Attack", 10},
-                    {"TypeAttack", 5},
-                    {"Defence", 0}
-                }),
+                new Item(3, "Staff", "Boosts magical attack power, and the innate magic protects from enemy's magic",
+                new Stats (0,0,5,0,20,10,0),
+                1                  
+                ),
 
                 //Sword
-                new Item(4, "Sword", "this is the sword weapon description", 
-                new Dictionary<string, int>{
-                    {"Type", (int) Item.AttackTypes.Normal},
-                    {"Attack", 10},
-                    {"Defence", 10}
-                })
+                new Item(4, "Sword", "The sword acts as a conduit for magic, increasing physical and magical offense",
+                new Stats (0,0,15,0,10,0,0),
+                1
+                ),
+
+                //Iron Armor
+                new Item(5, "Iron Armor", "Iron Armor Description", 
+                new Stats (0,0,0,15,0,0,-5),
+                2
+                ),
+
+                //Leather Armor
+                new Item(6, "Leather Armor", "Leather Armor Description",
+                new Stats (0,0,0,5,0,0,5),
+                2
+                ),
+
+                //Cloak
+                new Item(6, "Cloak", "Cloak Desctiption", 
+                new Stats (0,0,0,0,10,10,0),
+                2
+                )
         };
     }
 

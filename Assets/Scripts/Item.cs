@@ -13,14 +13,17 @@ public class Item
     public string name;
     public string description;
     public Sprite icon;
-    public Dictionary<string, int> stats = new Dictionary<string, int>();
+    //public Dictionary<string, int> stats = new Dictionary<string, int>();
+    public Stats stats;
+    public int type;
 
-    public Item(int id, string name, string description, Dictionary<string, int> stats){
+    public Item(int id, string name, string description, Stats stats, int type){
         this.id = id;
         this.name = name;
         this.description = description;
         this.stats = stats;
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + name);
+        this.type = type;
     }
 
     //copy constuctor
@@ -29,6 +32,7 @@ public class Item
         this.name = item.name;
         this.description = item.description;
         this.stats = item.stats;
+        this.type = item.type;
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.name);
     }
 }
