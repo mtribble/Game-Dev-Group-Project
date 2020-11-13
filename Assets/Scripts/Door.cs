@@ -12,7 +12,8 @@ public class Door : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneController.Instance.LoadScene(toScene);
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            SceneController.Instance.LoadScene(toScene, rb.velocity);
         }
     }
 

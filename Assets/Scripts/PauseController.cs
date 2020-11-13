@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    public Transform inventoryUITransform, pauseText;
-    private InventoryUI inventoryUI;
+    public delegate void Notify();
+    public Notify onDialog, onPause, onUnpause, onInventoryDisplay, onInventoryClear;
+
     private bool isPaused, isInvDisplayed;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        inventoryUI = inventoryUITransform.GetComponent<InventoryUI>();
         isPaused = false;
     }
 
@@ -46,23 +47,24 @@ public class PauseController : MonoBehaviour
     private void Unpause(){
         isPaused = false;
         Time.timeScale = 1;
-        pauseText.gameObject.SetActive(false);
+        onUnpause?.Invoke();
     }
 
     private void Pause(){
-        pauseText.gameObject.SetActive(true);
+        onPause?.Invoke();
         isPaused = true;
         Time.timeScale = 0;
     }
     private void DisplayInvenory(){
+        //isInvDisplayed = true;
+        //inventoryUITransform.gameObject.SetActive(true);
+        //pauseText.gameObject.SetActive(false);
+        //inventoryUI.DrawInventory();
         isInvDisplayed = true;
-        inventoryUITransform.gameObject.SetActive(true);
-        pauseText.gameObject.SetActive(false);
-        inventoryUI.DrawInventory();
+        onInventoryDisplay?.Invoke();
     }
     private void ClearInventoryDisplay(){
         isInvDisplayed = false;
-        inventoryUI.clear();
-        inventoryUITransform.gameObject.SetActive(false);
+        onInventoryClear?.Invoke();
     }
 }

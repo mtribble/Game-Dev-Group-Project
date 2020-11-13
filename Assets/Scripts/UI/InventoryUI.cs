@@ -16,12 +16,6 @@ public class InventoryUI : MonoBehaviour
     void Awake(){
         background = transform.Find("Background");
         prefab = background.Find("ItemUIPrefab");
-<<<<<<< HEAD:Assets/Scripts/UI/InventoryUI.cs
-<<<<<<< HEAD:Assets/Scripts/InventoryUI.cs
-=======
-        prefab = background.Find("InventoryItem");
-=======
->>>>>>> 0d66609d2a9a9d6efdec8beeec075cfccceb3510:Assets/Scripts/UI/InventoryUI.cs
         SceneController.Instance.onInventoryDisplay += DrawInventory;
         SceneController.Instance.onInventoryClear += clear;
     }
@@ -30,12 +24,6 @@ public class InventoryUI : MonoBehaviour
     {
         SceneController.Instance.onInventoryDisplay -= DrawInventory;
         SceneController.Instance.onInventoryClear -= clear;
-<<<<<<< HEAD:Assets/Scripts/InventoryUI.cs
->>>>>>> Stashed changes:Assets/Scripts/UI/InventoryUI.cs
-=======
->>>>>>> 0d66609d2a9a9d6efdec8beeec075cfccceb3510:Assets/Scripts/UI/InventoryUI.cs
-=======
->>>>>>> b2776738083d1d7d69afade37851a27604d6029c:Assets/Scripts/InventoryUI.cs
     }
 
 
