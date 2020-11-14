@@ -19,6 +19,7 @@ public class TEST_CombatTransition : MonoBehaviour
     {
         Time.timeScale = 0;
         winDisplay.gameObject.SetActive(true);
+        SceneController.Instance.AddEnemyToManifest();
         yield return new WaitForSecondsRealtime(delay);
         SceneController.Instance.LoadScene("Test_Overworld", Vector2.zero);
         Time.timeScale = 1;

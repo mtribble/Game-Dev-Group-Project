@@ -32,15 +32,16 @@ public class overWorldPlayer : MonoBehaviour
 
         if(col.gameObject.tag == "Item"){
             int itemID = col.gameObject.GetComponent<OverWorldItem>().ItemID;
-            PlayerManager.Instance.inventory.debugPrint();
             PlayerManager.Instance.inventory.AddItem(itemID);
             PlayerManager.Instance.inventory.debugPrint();
+            SceneController.Instance.AddToManifest(col.transform.position);
             Destroy(col.gameObject);
         }
 
         if(col.gameObject.tag == "Enemy"){
             Debug.Log("Starting Battle");
             SceneController.Instance.LoadScene("Test_Battle", rb.velocity);
+            SceneController.Instance.SetCurrentEnemy(col.transform.position);
             Destroy(col.gameObject);
         }
     }

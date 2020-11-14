@@ -3436,71 +3436,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1136779012 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-  m_PrefabInstance: {fileID: 1604908989348003694}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1206637870 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3243033845124575219, guid: c777e4488bd408e418302c82c3d42ede, type: 3}
-  m_PrefabInstance: {fileID: 3243033846849006885}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1206637872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206637870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efd9fded5cab8947a01f49a65caa3df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1206637873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206637870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
-    m_PressedColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
-    m_SelectedColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 1}
-    m_DisabledColor: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &1348229372
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18499,18 +18434,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5807563607314064556, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1136779012}
-    - target: {fileID: 5807563607314064556, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
-      propertyPath: positionShiftOnExit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807563607314064556, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
-      propertyPath: nudgeAmount
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 5807563607314064557, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.52
@@ -18558,10 +18481,6 @@ PrefabInstance:
     - target: {fileID: 5807563607314064559, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
       propertyPath: m_Name
       value: Game Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807563607314064559, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 814e104fa484fa842be2f4ecb6ba2979, type: 3}
@@ -18635,7 +18554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8076308823940615405, guid: e412893b09c817c41aa1dc65106bbc4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.95
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 8076308823940615405, guid: e412893b09c817c41aa1dc65106bbc4f, type: 3}
       propertyPath: m_LocalPosition.y

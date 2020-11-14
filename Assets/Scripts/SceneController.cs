@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    //keeps track of which enemies and items have been despawned
+    private Dictionary<string ,Dictionary<Vector3, bool>> despawnManifest;
+
+    // holds current enemy id incase player wins
+    private (string, Vector3) currentEnemy;
+
     private Stack<(string,Vector3)> prevScenes;
     private Vector3 prev_overworld_pos;
     public float nudgeAmount;
@@ -39,6 +45,7 @@ public class SceneController : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
         prevScenes = new Stack<(string, Vector3)>();
+        despawnManifest = new Dictionary<string ,Dictionary<Vector3, bool>>();
         isPaused = false;
     }
     #endregion
@@ -121,7 +128,7 @@ public class SceneController : MonoBehaviour
 
 
     //from https://forum.unity.com/threads/stop-a-function-till-scene-is-loaded.546646/
-    IEnumerator movePlayerAfterLoad(string sceneName, Vector3 pos)
+    IEnumerator MovePlayerAfterLoad(string sceneName, Vector3 pos)
     {
         while (SceneManager.GetActiveScene().name != sceneName)
         {
@@ -135,6 +142,19 @@ public class SceneController : MonoBehaviour
             player.transform.position = pos;
         }
     }
+    IEnumerator DespawnAfterLoad(string sceneName)
+    {
+        while (SceneManager.GetActiveScene().name != sceneName)
+        {
+            yield return new WaitForSeconds(0.001f);
+        }
+
+        // Do anything after proper scene has been loaded
+        if (SceneManager.GetActiveScene().name == sceneName)
+        {
+            Despawn();
+        }
+    }
 
     public void LoadScene(string nextScene, Vector3 playerVel)
     {
@@ -143,7 +163,7 @@ public class SceneController : MonoBehaviour
        if (prevScenes.Count != 0 && prevScenes.Peek().Item1 == nextScene)
         {
             SceneManager.LoadScene(nextScene);
-            StartCoroutine(movePlayerAfterLoad(nextScene, prevScenes.Pop().Item2));
+            StartCoroutine(MovePlayerAfterLoad(nextScene, prevScenes.Pop().Item2));
         }
         else
         {
@@ -158,6 +178,7 @@ public class SceneController : MonoBehaviour
             
             SceneManager.LoadScene(nextScene);
         }
+        StartCoroutine(DespawnAfterLoad(nextScene));
     }
 
     public void DisplayDialog(string dialog)
@@ -171,4 +192,42 @@ public class SceneController : MonoBehaviour
         onDialogDisplayClear?.Invoke();
     }
 
+    //despawns any overworld item or overworld enemy with a true flag in the manifest
+    private void Despawn(){
+        if(despawnManifest.ContainsKey(SceneManager.GetActiveScene().name)){
+            Dictionary<Vector3, bool> sceneManifest = despawnManifest[SceneManager.GetActiveScene().name];
+            Debug.Log(sceneManifest.Count.ToString() + " Objects in scene manifest");
+            foreach(OverworldEnemy enemy in GameObject.FindObjectsOfType<OverworldEnemy>()){
+                if(sceneManifest.ContainsKey(enemy.transform.position)){
+                    Debug.Log("despawn enemy");
+                    Destroy(enemy.gameObject);
+                }
+            }
+            foreach(OverWorldItem item in GameObject.FindObjectsOfType<OverWorldItem>()){
+                if(sceneManifest.ContainsKey(item.transform.position)){
+                    Debug.Log("despawn item");
+                    Destroy(item.gameObject);
+                }
+            }
+        }
+    }
+    public void SetCurrentEnemy(Vector3 location){
+        currentEnemy = (SceneManager.GetActiveScene().name, location);
+    }
+
+    public void AddToManifest(Vector3 location){
+        AddToManifest(location,  SceneManager.GetActiveScene().name);
+    }
+
+    public void AddToManifest(Vector3 location, string sceneName){
+        Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
+         if(!despawnManifest.ContainsKey(SceneManager.GetActiveScene().name)){
+            despawnManifest[sceneName] = new Dictionary<Vector3, bool>();
+         }
+        Dictionary<Vector3, bool> sceneManifest = despawnManifest[sceneName];
+        sceneManifest[location] = true;
+    }
+    public void AddEnemyToManifest(){
+        AddToManifest(currentEnemy.Item2,currentEnemy.Item1);
+    }
 }
