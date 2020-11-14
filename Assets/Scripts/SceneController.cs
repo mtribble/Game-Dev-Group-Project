@@ -196,16 +196,16 @@ public class SceneController : MonoBehaviour
     private void Despawn(){
         if(despawnManifest.ContainsKey(SceneManager.GetActiveScene().name)){
             Dictionary<Vector3, bool> sceneManifest = despawnManifest[SceneManager.GetActiveScene().name];
-            Debug.Log(sceneManifest.Count.ToString() + " Objects in scene manifest");
+            //Debug.Log(sceneManifest.Count.ToString() + " Objects in scene manifest");
             foreach(OverworldEnemy enemy in GameObject.FindObjectsOfType<OverworldEnemy>()){
                 if(sceneManifest.ContainsKey(enemy.transform.position)){
-                    Debug.Log("despawn enemy");
+                    //Debug.Log("despawn enemy");
                     Destroy(enemy.gameObject);
                 }
             }
             foreach(OverWorldItem item in GameObject.FindObjectsOfType<OverWorldItem>()){
                 if(sceneManifest.ContainsKey(item.transform.position)){
-                    Debug.Log("despawn item");
+                    //Debug.Log("despawn item");
                     Destroy(item.gameObject);
                 }
             }
@@ -220,7 +220,7 @@ public class SceneController : MonoBehaviour
     }
 
     public void AddToManifest(Vector3 location, string sceneName){
-        Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
+        //Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
          if(!despawnManifest.ContainsKey(SceneManager.GetActiveScene().name)){
             despawnManifest[sceneName] = new Dictionary<Vector3, bool>();
          }

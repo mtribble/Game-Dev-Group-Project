@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Stats 
 {
@@ -26,5 +27,56 @@ public class Stats
         this.mag = 10;
         this.magdef = 10;
         this.speed = 10;
+    }
+
+
+    public static Stats operator +(Stats a, Stats b)
+    {
+        return new Stats(
+            a.hp + b.hp, 
+            a.maxhp + b.maxhp, 
+            a.str + b.str, 
+            a.def + b.def, 
+            a.mag + b.mag,
+            a.magdef + b.magdef,
+            a.speed + b.speed);
+    }
+
+    public static Stats operator -(Stats a, Stats b)
+    {
+        return new Stats(
+            a.hp - b.hp, 
+            a.maxhp - b.maxhp, 
+            a.str - b.str, 
+            a.def - b.def, 
+            a.mag - b.mag,
+            a.magdef - b.magdef,
+            a.speed - b.speed);
+    }
+    public static Stats operator *(Stats a, Stats b)
+    {
+        return new Stats(
+            a.hp * b.hp, 
+            a.maxhp * b.maxhp, 
+            a.str * b.str, 
+            a.def * b.def, 
+            a.mag * b.mag,
+            a.magdef * b.magdef,
+            a.speed * b.speed);
+    }
+    public static Stats operator /(Stats a, Stats b)
+    {
+        if (b.hp == 0 || b.maxhp == 0 || b.str == 0 || b.def == 0 || b.mag == 0 || b.magdef == 0 || b.speed == 0)
+        {
+            throw new DivideByZeroException();
+        }
+        return new Stats(
+            a.hp / b.hp, 
+            a.maxhp / b.maxhp, 
+            a.str / b.str, 
+            a.def / b.def, 
+            a.mag / b.mag,
+            a.magdef / b.magdef,
+            a.speed / b.speed);
     }
 }

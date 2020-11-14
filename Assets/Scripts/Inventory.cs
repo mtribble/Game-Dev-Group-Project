@@ -44,6 +44,6 @@ public class Inventory
                 s += stat.Key + ": " + stat.Value.ToString() + " ";
             }
         }
-        Debug.Log(s);
+        //Debug.Log(s);
     }
 }
