@@ -10,21 +10,38 @@ public class Item
         TestType
     }
 
+    //Do not change order, used as index for Item array in equipment class
+    public enum EquipmentType
+    {
+        Weapon,
+        Head,
+        Chest,
+        Legs,
+        Feet,
+        None
+    }
+
     public int id;
+    public EquipmentType itemType;
     public string name;
     public string description;
     public Sprite icon;
-    //public Stats stats;
-    //public ItemType type;
 
-    public Dictionary<string, int> stats = new Dictionary<string, int>();
+    //temp name till task to move items to stats is pushed
+    public Stats stats;
 
-    public Item(int id, string name, string description, Dictionary<string, int> stats){
+    public Item(int id, string name, string description, Stats stats, EquipmentType itemType = EquipmentType.None){
         this.id = id;
         this.name = name;
         this.description = description;
         this.stats = stats;
-        this.icon = Resources.Load<Sprite>("Sprites/Items/" + name);
+        if(itemType == Item.EquipmentType.Weapon){
+            this.icon = Resources.Load<Sprite>("Sprites/Items/" + name);
+        }
+        else{
+            this.icon = Resources.Load<Sprite>("Sprites/Items/id" + id.ToString());
+        }
+        this.itemType = itemType;
     }
 
     //copy constuctor
@@ -34,5 +51,6 @@ public class Item
         this.description = item.description;
         this.stats = item.stats;
         this.icon = Resources.Load<Sprite>("Sprites/Items/" + item.name);
+        this.itemType = item.itemType;
     }
 }

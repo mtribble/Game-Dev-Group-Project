@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Inventory
 {
+    public delegate void Notify();
+    public Notify onInventoryChange;
+
     private List<Item> itemList;
 
     public Inventory() {
@@ -16,6 +19,7 @@ public class Inventory
 
     public void AddItem(int id){
         itemList.Add(ItemDatabase.Instance.GetItem(id));
+        onInventoryChange?.Invoke();
     }
 
     public List<Item> GetItems(){
@@ -29,7 +33,9 @@ public class Inventory
 
     public bool RemoveItem(int id)
     {
-        return itemList.Remove(ItemDatabase.Instance.GetItem(id));
+        bool retVal = itemList.Remove(ItemDatabase.Instance.GetItem(id));
+        onInventoryChange?.Invoke();
+        return retVal;
     }
 
     public void debugPrint(){
@@ -39,10 +45,10 @@ public class Inventory
         {
             s += "\n" + i.name + ": ";
 
-            foreach (KeyValuePair<string, int> stat in ItemDatabase.Instance.GetItem(i.name).stats)
-            {
-                s += stat.Key + ": " + stat.Value.ToString() + " ";
-            }
+            //foreach (KeyValuePair<string, int> stat in ItemDatabase.Instance.GetItem(i.name).stats)
+            //{
+            //    s += stat.Key + ": " + stat.Value.ToString() + " ";
+            //}
         }
         //Debug.Log(s);
     }
