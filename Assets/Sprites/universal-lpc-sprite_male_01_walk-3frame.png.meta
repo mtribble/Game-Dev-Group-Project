@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: d26c70dcfadef6d46a4556d0dff45329
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2487914637020827827
+    second: universal-lpc-sprite_male_01_walk-3frame_0
+  - first:
+      213: 9176307269600758772
+    second: universal-lpc-sprite_male_01_walk-3frame_1
+  - first:
+      213: 2660141479108689051
+    second: universal-lpc-sprite_male_01_walk-3frame_2
+  - first:
+      213: 660255169633537567
+    second: universal-lpc-sprite_male_01_walk-3frame_3
+  - first:
+      213: 5319664189239990039
+    second: universal-lpc-sprite_male_01_walk-3frame_4
+  - first:
+      213: 7291614989401873495
+    second: universal-lpc-sprite_male_01_walk-3frame_5
+  - first:
+      213: -3565226536834843958
+    second: universal-lpc-sprite_male_01_walk-3frame_6
+  - first:
+      213: 7867205508617585413
+    second: universal-lpc-sprite_male_01_walk-3frame_7
+  - first:
+      213: -799011094455250696
+    second: universal-lpc-sprite_male_01_walk-3frame_8
+  - first:
+      213: -8545125814381554444
+    second: universal-lpc-sprite_male_01_walk-3frame_9
+  - first:
+      213: -5109662839530384181
+    second: universal-lpc-sprite_male_01_walk-3frame_10
+  - first:
+      213: -846119953199712863
+    second: universal-lpc-sprite_male_01_walk-3frame_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 192
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b01f1b4e29d68220800000000000000
+      internalID: 2487914637020827827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 195
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb4362f7dac85f70800000000000000
+      internalID: 9176307269600758772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_2
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 192
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c3e8ac498bae420800000000000000
+      internalID: 2660141479108689051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_3
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 128
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e4f1f1492b92900800000000000000
+      internalID: 660255169633537567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_4
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 129
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7171404356e33d940800000000000000
+      internalID: 5319664189239990039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_5
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 128
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c56324335013560800000000000000
+      internalID: 7291614989401873495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 65
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acab928aa55c58ec0800000000000000
+      internalID: -3565226536834843958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_7
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 67
+        width: 30
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503c5245abded2d60800000000000000
+      internalID: 7867205508617585413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_8
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 65
+        width: 29
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0166794a759e4f0800000000000000
+      internalID: -799011094455250696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f454c8885d996980800000000000000
+      internalID: -8545125814381554444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_10
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1
+        width: 24
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc417c738b4d619b0800000000000000
+      internalID: -5109662839530384181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: universal-lpc-sprite_male_01_walk-3frame_11
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 0
+        width: 26
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a53920b26af144f0800000000000000
+      internalID: -846119953199712863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
