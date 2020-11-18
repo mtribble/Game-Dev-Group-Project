@@ -29,6 +29,17 @@ public class Stats
         this.speed = 10;
     }
 
+    public Stats(int allStats)
+    {
+        this.hp = allStats;
+        this.maxhp = allStats;
+        this.str = allStats;
+        this.def = allStats;
+        this.mag = allStats;
+        this.magdef = allStats;
+        this.speed = allStats;
+    }
+
 
     public static Stats operator +(Stats a, Stats b)
     {

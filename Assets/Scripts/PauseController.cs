@@ -56,10 +56,6 @@ public class PauseController : MonoBehaviour
         Time.timeScale = 0;
     }
     private void DisplayInvenory(){
-        //isInvDisplayed = true;
-        //inventoryUITransform.gameObject.SetActive(true);
-        //pauseText.gameObject.SetActive(false);
-        //inventoryUI.DrawInventory();
         isInvDisplayed = true;
         onInventoryDisplay?.Invoke();
     }

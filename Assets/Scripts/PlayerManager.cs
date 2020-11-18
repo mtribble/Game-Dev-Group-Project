@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 {
     public Character player, enemy;
     public Inventory inventory;
+    public Equipment equipment;
 
 
     #region Singleton
@@ -31,6 +32,7 @@ public class PlayerManager : MonoBehaviour
         player = new Character();
         enemy = new Character();
         inventory = new Inventory();
+        equipment = new Equipment();
     } 
 
     #endregion
