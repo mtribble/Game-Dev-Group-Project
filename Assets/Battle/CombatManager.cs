@@ -12,10 +12,19 @@ public class CombatManager : MonoBehaviour
 {
 
     //to be included when finished elsewhere: enemy AI for choosing attacks)
-    public Character enemy;
+    Character enemy;
 
     //I'm not sure what we'll put in here that's unique for a player; probably equipment 
-    public Character player;
+    Character player;
+
+    Equipment playerEquipment;
+
+
+    void Start(){
+        player = PlayerManager.Instance.player;
+        enemy = PlayerManager.Instance.enemy;
+        playerEquipment = PlayerManager.Instance.equipment;
+    }
     
     public bool run = false;
 
@@ -80,18 +89,26 @@ public class CombatManager : MonoBehaviour
         }
         int damage = move.power * atk - def;
         defender.hp = defender.hp - damage;
-
-
     }
 
 
 
+    public void Run(){
+        player.stat.hp = 0;
+    }
 
+    public void Attack(){
+        Attack sword = new Attack(false, 65);
+        damageStep(sword, player.stat, enemy.stat);
+    }
 
+    public void Heal(){
 
+    }
 
+    public void MagicAttack(){
 
-
+    }
 
     public void test() {
 

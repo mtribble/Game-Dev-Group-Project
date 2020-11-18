@@ -5,6 +5,7 @@ using UnityEngine;
 public class CombatTestButtons : MonoBehaviour
 {
     Character player, enemy;
+    Equipment playerEquipment;
 
     private void Start()
     {
@@ -19,13 +20,12 @@ public class CombatTestButtons : MonoBehaviour
     
     public void randAttack()
     {
+        Stats totalStats = player.stat + playerEquipment.GetStats();
+
         int playerDamage = Random.Range(0, 3);
         int enemyDamage = Random.Range(0, 3);
-        if(Time.timeScale != 0)// this should be replaced
-        {
-            player.stat.hp -= playerDamage;
-            enemy.stat.hp -= enemyDamage;
-        }
-        
+
+        player.stat.hp -= playerDamage;
+        enemy.stat.hp -= enemyDamage;        
     }
 }

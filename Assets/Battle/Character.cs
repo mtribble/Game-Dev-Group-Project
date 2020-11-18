@@ -14,6 +14,14 @@ public class Character
         this.attacks = attacks;
         Equipment = new List<Item>();
     }
+
+    public Character (int hp, int maxhp, int str, int def, int mag, int magdef, int speed)
+    {
+        stat = new Stats(hp, maxhp, str, def, mag, magdef, speed);
+        this.attacks = new List<Attack>();
+        Equipment = new List<Item>();
+    }
+    
     public Character ()
     {
         stat = new Stats(10);

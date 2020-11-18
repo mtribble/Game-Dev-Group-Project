@@ -29,8 +29,9 @@ public class PlayerManager : MonoBehaviour
 
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
-        player = new Character();
-        enemy = new Character();
+        
+        enemy = new Character(100, 100, 15, 10, 1, 5, 10);
+        player = new Character(100, 100, 20, 5, 20, 5, 15);
         inventory = new Inventory();
         equipment = new Equipment();
     } 

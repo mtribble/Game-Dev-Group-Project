@@ -524,7 +524,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 693638214}
-  - component: {fileID: 693638213}
   - component: {fileID: 693638212}
   m_Layer: 0
   m_Name: UIManager
@@ -543,18 +542,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d06af15c2a6a454b9360569be425e05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &693638213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693638211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b78cb192f683f4590e51a11cff0078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &693638214
@@ -745,9 +732,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693638212}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: HealButton
+      - m_Target: {fileID: 1077560492}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -956,8 +943,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693638212}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1077560492}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: Run
         m_Mode: 1
         m_Arguments:
@@ -1088,8 +1075,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693638212}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 1077560492}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
         m_MethodName: MagicAttack
         m_Mode: 1
         m_Arguments:
@@ -1251,6 +1238,7 @@ GameObject:
   - component: {fileID: 1077560490}
   - component: {fileID: 1077560489}
   - component: {fileID: 1077560491}
+  - component: {fileID: 1077560492}
   m_Layer: 0
   m_Name: CombatController
   m_TagString: Untagged
@@ -1270,8 +1258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00291d503dea707419e2ec1647e34898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winDisplay: {fileID: 0}
-  loseDisplay: {fileID: 0}
+  winDisplay: {fileID: 1542042004}
+  loseDisplay: {fileID: 1211535752}
   delay: 3
 --- !u!4 &1077560490
 Transform:
@@ -1299,6 +1287,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c29706cce1767499e83596e772b017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1077560492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077560488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a27b3fe9c912b74eb64ce2a11c3057e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  run: 0
 --- !u!1 &1107073707
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,9 +2235,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 693638212}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: AttackButton
+      - m_Target: {fileID: 1077560492}
+        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
