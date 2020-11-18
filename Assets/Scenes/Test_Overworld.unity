@@ -439,9 +439,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4075234558087958309, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.526801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075234558087958309, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.526801
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075234558087958309, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.526801
+      objectReference: {fileID: 0}
     - target: {fileID: 4865219322915185990, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Name
       value: Temp Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -569042413123032440, guid: aec023ecb8712fe41bc5155c657d3eba, type: 3}
+    - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
