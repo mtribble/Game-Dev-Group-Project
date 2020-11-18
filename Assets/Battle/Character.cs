@@ -14,6 +14,13 @@ public class Character
         this.attacks = attacks;
         Equipment = new List<Item>();
     }
+    public Character ()
+    {
+        stat = new Stats(10);
+        this.attacks = new List<Attack>();
+        Equipment = new List<Item>();
+    }
+
     //use 1 to add stats together, use -1 to reduce stats
     public Character changeStats (Character player, Stats stats, int modifier) {
         player.stat.hp = player.stat.hp + stats.hp * modifier;
@@ -28,12 +35,12 @@ public class Character
     }
 
     public Character ChangeEquipment(Character player, Item equipment) {
-        int type = equipment.type;
+        Item.EquipmentType itemType = equipment.itemType;
         Item toChange = null;
 
         for (int i = 0; i < Equipment.Count && toChange != null; i++)
         {
-            if (Equipment[i].type == type) { 
+            if (Equipment[i].itemType == itemType) { 
                 toChange = Equipment[i];
                 player.Equipment.RemoveAt(i);
             }
