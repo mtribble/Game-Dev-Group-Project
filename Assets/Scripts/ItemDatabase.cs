@@ -37,23 +37,23 @@ public class ItemDatabase : MonoBehaviour
 
                 //Axe
                 new Item(0, "Axe", "this is the axe weapon description", 
-                new Stats(0), Item.EquipmentType.Weapon),
+                new Stats (0,0,20,5,-5,0,-10), Item.EquipmentType.Weapon),
 
                 //Club
                 new Item(1, "Club", "this is the club weapon description", 
-                new Stats(0), Item.EquipmentType.Weapon),
+                new Stats (0,0,10,0,0,0,5), Item.EquipmentType.Weapon),
 
                 //Spear
                 new Item(2, "Spear", "this is the spear weapon description", 
-                new Stats(0), Item.EquipmentType.Weapon),
+                new Stats (0,0,15,5,0,0,0), Item.EquipmentType.Weapon),
 
                 //Staff
                 new Item(3, "Staff", "this is the staff weapon description", 
-                new Stats(0), Item.EquipmentType.Weapon),
+                new Stats (0,0,5,0,20,10,0), Item.EquipmentType.Weapon),
 
                 //Sword
                 new Item(4, "Sword", "this is the sword weapon description", 
-                new Stats(0), Item.EquipmentType.Weapon),
+                new Stats (0,0,15,0,10,0,0), Item.EquipmentType.Weapon),
 
                 //Teir 0 Shirt
                 new Item(5, "Shirt", "this is a plain shirt", 

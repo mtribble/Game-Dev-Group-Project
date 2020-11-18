@@ -18,7 +18,6 @@ public class InventoryItem : MonoBehaviour
 
     public void SetItem(Item newItem)
     {
-        Debug.Log("Setting item");
         item = newItem;
         icon.sprite = item.icon;
         button.onClick.AddListener(EquipItem);
