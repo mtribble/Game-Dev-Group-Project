@@ -23,6 +23,8 @@ public class CombatManager : MonoBehaviour
     void Start(){
         player = PlayerManager.Instance.player;
         enemy = PlayerManager.Instance.enemy;
+        player.stat.hp = player.stat.maxhp;
+        enemy.stat.hp = enemy.stat.maxhp;
         playerEquipment = PlayerManager.Instance.equipment;
     }
     
