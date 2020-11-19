@@ -24,7 +24,8 @@ public class overWorldPlayer : MonoBehaviour
     void handleMovement() {
         float mH = Input.GetAxis ("Horizontal");
         float mV = Input.GetAxis ("Vertical");
-        rb.velocity = new Vector3 (mH * speed, mV * speed, 0);
+        Vector3 newVel = new Vector3 (mH * speed, mV * speed, 0);
+        rb.velocity = Vector3.ClampMagnitude(newVel,speed);
     }
     
 

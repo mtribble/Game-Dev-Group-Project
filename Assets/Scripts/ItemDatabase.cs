@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemDatabase : MonoBehaviour
 {
+    private bool doneBuilding;
     private static ItemDatabase _instance;
 
     public static ItemDatabase Instance 
@@ -18,7 +19,7 @@ public class ItemDatabase : MonoBehaviour
             Destroy(this.gameObject);
             return;
         }
-
+        doneBuilding = false;
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
         buildDB();
@@ -27,14 +28,19 @@ public class ItemDatabase : MonoBehaviour
    public List<Item> items = new List<Item>();
 
     public Item GetItem(int id){
+        while(doneBuilding == false){
+
+        }
         return items.Find(item => item.id == id);
     }
     public Item GetItem(string itemName){
+        while(doneBuilding == false){
+            
+        }
         return items.Find(item => item.name == itemName);
     }
     void buildDB(){
         items = new List<Item>{
-
                 //Axe
                 new Item(0, "Axe", "this is the axe weapon description", 
                 new Stats (0,0,20,5,-5,0,-10), Item.EquipmentType.Weapon),
@@ -102,6 +108,7 @@ public class ItemDatabase : MonoBehaviour
                 //Tier 4 Feet
 
         };
+        doneBuilding = true;
     }
 
 }
