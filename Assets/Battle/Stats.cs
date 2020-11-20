@@ -52,7 +52,6 @@ public class Stats
             a.magdef + b.magdef,
             a.speed + b.speed);
     }
-
     public static Stats operator -(Stats a, Stats b)
     {
         return new Stats(
@@ -89,5 +88,33 @@ public class Stats
             a.mag / b.mag,
             a.magdef / b.magdef,
             a.speed / b.speed);
+    }
+
+    public override string ToString()
+    {
+        String format = "";
+
+        if(hp != 0){
+            format += "HP: {0}\n";
+        }
+        if(maxhp != 0){
+            format += "MaxHP: {1}\n";
+        }
+        if(str != 0){
+            format += "Str: {2}\n";
+        }
+        if(def != 0){
+            format += "Def: {3}\n";
+        }
+        if(mag != 0){
+            format += "Mag: {4}\n";
+        }
+        if(magdef != 0){
+            format += "MagDef: {5}\n";
+        }
+        if(speed != 0){
+            format += "Speed: {6}";
+        }
+        return String.Format(format, hp, maxhp, str, def, mag, magdef, speed);
     }
 }

@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
 
     public int rows, columns;
     public float xPadding, yPadding;
-    private Transform itemsBackground, equipmentBackground;
+    private Transform itemsBackground, equipmentBackground, tooltipTransform;
     private Transform prefab;
 
     public Transform weaponSlot, helmetSlot, chestSlot, legsSlot, feetSlot;
