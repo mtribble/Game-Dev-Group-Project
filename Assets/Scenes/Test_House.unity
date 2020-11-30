@@ -9701,6 +9701,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!95 &228757046 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 695534392, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
+  m_PrefabInstance: {fileID: 526812659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &526812659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9720,6 +9725,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.87
       objectReference: {fileID: 0}
+    - target: {fileID: 1604908988244877422, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 228757046}
     - target: {fileID: 1604908988244877713, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_Name
       value: Player (1)

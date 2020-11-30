@@ -7,6 +7,7 @@ public class overWorldPlayer : MonoBehaviour
 {
     Rigidbody2D rb;
     public float speed;
+    public Animator animator;
 
     private string lastDir;
     
@@ -26,6 +27,10 @@ public class overWorldPlayer : MonoBehaviour
         float mV = Input.GetAxis ("Vertical");
         Vector3 newVel = new Vector3 (mH * speed, mV * speed, 0);
         rb.velocity = Vector3.ClampMagnitude(newVel,speed);
+
+        animator.SetFloat("Horizontal", mH);
+        animator.SetFloat("Vertical", mV);
+        animator.SetFloat("Speed", speed);
     }
     
 
