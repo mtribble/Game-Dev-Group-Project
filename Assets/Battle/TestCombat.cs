@@ -4,26 +4,36 @@ using UnityEngine;
 
 public class TestCombat : MonoBehaviour
 {
-    public void test()
-    {
+    Character player, enemy;
 
-        int damageStep(Attack move, Stats attacker, Stats defender)
+    private void Start()
+    {
+        player = PlayerManager.Instance.player;
+        enemy = PlayerManager.Instance.enemy;
+    }
+
+    int damageStep(Attack move, Stats attacker, Stats defender)
         {
             int atk;
             int def;
             if (move.type == false)
             {
-                atk = attacker.str;
-                def = defender.def;
+            Debug.Log("detected as physical attack");
+            atk = attacker.str;
+            def = defender.def;
             }
             else
             {
+            Debug.Log("Detected as magic attack");
                 atk = attacker.mag;
                 def = defender.magdef;
             }
-            int damage = move.power * atk - def;
-            defender.hp = defender.hp - damage;
-            if (defender.hp > defender.maxhp) defender.hp = defender.maxhp;
+        Debug.Log("Saved atk and def");
+        int damage = move.power + atk - def;
+        Debug.Log("Calculated damage " + damage.ToString());
+        defender.hp = defender.hp - damage;
+        Debug.Log("New hp: " + defender.hp.ToString());
+        if (defender.hp > defender.maxhp) defender.hp = defender.maxhp;
 
             return defender.hp;
 
@@ -37,40 +47,44 @@ public class TestCombat : MonoBehaviour
         //in combat, be able to target yourself. Has the side effect that magic defense reduces healing, but that can be a feature. 
         Attack heal = new Attack(true, -40);
 
-        List<Attack> TestEnemyAttacks = new List<Attack>();
-        TestEnemyAttacks.Add(bash);
+        
 
-        List<Attack> TestPlayerAttacks = new List<Attack>();
-        TestEnemyAttacks.Add(sword);
-        TestEnemyAttacks.Add(ignite);
-        TestEnemyAttacks.Add(heal);
+        public Character testenemy = new Character(100, 100, 15, 10, 1, 5, 10);
+        public Character testplayer = new Character(100, 100, 20, 5, 20, 5, 15);
 
-        Character testenemy = new Character(100, 100, 15, 10, 1, 5, 10, TestEnemyAttacks);
-        Character testplayer = new Character(100, 100, 20, 5, 20, 5, 15, TestPlayerAttacks);
+       
 
-        List<Character> allPlayers = new List<Character>();
-        allPlayers.Add(testplayer);
-
-        List<Character> allEnemies = new List<Character>();
-        allEnemies.Add(testenemy);
-
-        Stats basicAttack(Stats attacker, Stats defender)
+        public void basicAttack()
         {
-            defender.hp = damageStep(sword, attacker, defender);
-            return defender;
+        Debug.Log("Basic attack selected");
+        enemy.stat.hp = damageStep(sword, player.stat, enemy.stat);
+            counter();
+     
         }
 
-        Stats fireball(Stats attacker, Stats defender)
+        public void fireball()
         {
-            defender.hp = damageStep(ignite, attacker, defender);
-            return defender;
+        Debug.Log("Fireball selected");
+        enemy.stat.hp = damageStep(ignite, player.stat, enemy.stat);
+            counter();
         }
 
-        Stats recover(Stats attacker)
+        public void recover()
         {
-            attacker.hp = damageStep(heal, attacker, attacker);
-            return attacker;
+        Debug.Log("Heal selected");
+        player.stat.hp = damageStep(heal, player.stat, player.stat);
+            counter();
         }
 
-    }
+        public void counter()
+        {
+        if (enemy.stat.hp < 0) { }
+        else
+        {
+            Debug.Log("Starting Enemy's Attack");
+            player.stat.hp = damageStep(bash, enemy.stat, player.stat);
+        }
+        }
+
+    
 }

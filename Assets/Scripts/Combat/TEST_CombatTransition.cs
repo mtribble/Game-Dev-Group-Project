@@ -40,7 +40,7 @@ public class TEST_CombatTransition : MonoBehaviour
         if(PlayerManager.Instance.player.stat.hp <= 0){
             StartCoroutine(DisplayLoseAndLoad());
         }
-        if (PlayerManager.Instance.enemy.stat.hp <= 0)
+        else if (PlayerManager.Instance.enemy.stat.hp <= 0)
         {
             StartCoroutine(DisplayWinAndLoad());
         }
