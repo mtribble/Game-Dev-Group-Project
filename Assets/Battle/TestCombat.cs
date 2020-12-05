@@ -5,9 +5,11 @@ using UnityEngine;
 public class TestCombat : MonoBehaviour
 {
     Character player, enemy;
+    bool isAtacking;
 
     private void Start()
     {
+        isAtacking = false;
         player = PlayerManager.Instance.player;
         enemy = PlayerManager.Instance.enemy;
     }
@@ -52,42 +54,57 @@ public class TestCombat : MonoBehaviour
 
         
 
-        public Character testenemy = new Character(100, 100, 15, 10, 1, 5, 10);
-        public Character testplayer = new Character(100, 100, 20, 5, 20, 5, 15);
-
-       
-
-        public void basicAttack()
-        {
-        Debug.Log("Basic attack selected");
-        enemy.stat.hp = damageStep(sword, player.stat, enemy.stat);
+    public void basicAttack()
+    {
+        if(!isAtacking && player.stat.hp > 0){
+            isAtacking = true;
+            Debug.Log("Basic attack selected");
+            enemy.stat.hp = damageStep(sword, player.stat, enemy.stat);
             counter();
-     
+            isAtacking = false;
         }
+    }
 
-        public void fireball()
-        {
-        Debug.Log("Fireball selected");
-        enemy.stat.hp = damageStep(ignite, player.stat, enemy.stat);
+    public void fireball()
+    {
+        if(!isAtacking && player.stat.hp > 0){
+            isAtacking = true;
+            Debug.Log("Fireball selected");
+            enemy.stat.hp = damageStep(ignite, player.stat, enemy.stat);
             counter();
+            isAtacking = false;
         }
+    }
 
-        public void recover()
-        {
-        Debug.Log("Heal selected");
-        player.stat.hp = damageStep(heal, player.stat, player.stat);
+    public void recover()
+    {
+        if(!isAtacking && player.stat.hp > 0){
+            isAtacking = true;
+            Debug.Log("Heal selected");
+            player.stat.hp = damageStep(heal, player.stat, player.stat);
             counter();
+            isAtacking = false;
         }
+    }
 
-        public void counter()
-        {
-        if (enemy.stat.hp < 0) { }
-        else
+    public void run()
+    {
+        if(!isAtacking && player.stat.hp > 0){
+            isAtacking = true;
+            Debug.Log("Run selected");
+            player.stat.hp = 0;
+            isAtacking = false;
+        }
+    }
+
+    public void counter()
+    {
+        if (enemy.stat.hp >= 0)
         {
             Debug.Log("Starting Enemy's Attack");
             player.stat.hp = damageStep(bash, enemy.stat, player.stat);
         }
-        }
+    }
 
     
 }
