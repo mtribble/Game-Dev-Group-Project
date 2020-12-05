@@ -29,7 +29,10 @@ public class TestCombat : MonoBehaviour
                 def = defender.magdef;
             }
         Debug.Log("Saved atk and def");
-        int damage = move.power + atk - def;
+        int damage;
+        if (move.power + atk - def < 0 && move.power > 0) { Debug.Log("Damage dealt was negative"); damage = 0; }
+        else if (move.power + atk - def > 0 && move.power < 0) { Debug.Log("Heal was negative"); damage = 0; }
+        else { damage = move.power + atk - def; }
         Debug.Log("Calculated damage " + damage.ToString());
         defender.hp = defender.hp - damage;
         Debug.Log("New hp: " + defender.hp.ToString());

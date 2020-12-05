@@ -89,7 +89,10 @@ public class CombatManager : MonoBehaviour
             atk = attacker.mag;
             def = defender.magdef;
         }
-        int damage = move.power + atk - def;
+        int damage;
+        if (move.power + atk - def < 0 && move.power > 0) { damage = 0; }
+        else if (move.power + atk - def > 0 && move.power < 0) { damage = 0; }
+        else { damage = move.power + atk - def; }
         defender.hp = defender.hp - damage;
     }
 
