@@ -13,7 +13,7 @@ public class EquipmentItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHa
     private Image icon;
     private Sprite defaultSprite;
     private Button button;
-    private bool mouseOver;
+    private bool mouseOver, isItemEquiped;
     public string slotType;
     private Item.EquipmentType type;
 
@@ -24,6 +24,7 @@ public class EquipmentItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHa
         icon = transform.Find("Icon").GetComponent<Image>();
         defaultSprite = icon.sprite;
         button = transform.GetComponent<Button>();
+        isItemEquiped = false;
     }
 
     public void SetItem(Item newItem)
@@ -31,12 +32,14 @@ public class EquipmentItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHa
         item = newItem;
         icon.sprite = item.icon;
         button.onClick.AddListener(UnquipItem);
+        isItemEquiped = true;
     }
 
     public void UnquipItem()
     {
         Item temp = item;
-        if(PlayerManager.Instance.equipment.UnequipItem(item)){
+        if(isItemEquiped && PlayerManager.Instance.equipment.UnequipItem(item)){
+            isItemEquiped = false;
             button.onClick.RemoveListener(UnquipItem);
             icon.sprite = defaultSprite;
             PlayerManager.Instance.inventory.AddItem(temp);
@@ -57,7 +60,7 @@ public class EquipmentItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHa
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        if(item != null){
+        if(isItemEquiped){
             mouseOver = true;
             StartCoroutine(DisplayToolTip());
         }
@@ -65,7 +68,7 @@ public class EquipmentItem : MonoBehaviour, IPointerExitHandler, IPointerEnterHa
  
     public void OnPointerExit(PointerEventData eventData)
     {
-        if(item != null) mouseOver = false;
+        if(isItemEquiped) mouseOver = false;
     }
 
     IEnumerator DisplayToolTip(){
