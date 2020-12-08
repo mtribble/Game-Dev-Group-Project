@@ -492,6 +492,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp Enemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.53
+      objectReference: {fileID: 0}
     - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -549,11 +557,6 @@ PolygonCollider2D:
       - {x: 0.22, y: -0.22}
       - {x: 0.22, y: 0.06}
       - {x: 0.02, y: 0.29999998}
---- !u!95 &975112207 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 695534392, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-  m_PrefabInstance: {fileID: 1604908989348003694}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1123051065
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,6 +3695,14 @@ PrefabInstance:
     - target: {fileID: 4865219322915185990, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Name
       value: Temp Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Sprite
@@ -18113,6 +18124,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Temp Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.52
+      objectReference: {fileID: 0}
     - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -18428,14 +18447,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 695534388, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 695534392, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.67
@@ -18446,7 +18457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.87105
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_LocalRotation.x
@@ -18480,21 +18491,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1604908988244877421, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7867205508617585413, guid: d26c70dcfadef6d46a4556d0dff45329, type: 3}
-    - target: {fileID: 1604908988244877422, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 975112207}
     - target: {fileID: 1604908988244877713, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1604908989101482162, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.357
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
@@ -19015,6 +19014,14 @@ PrefabInstance:
     - target: {fileID: 4865219322915185990, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Name
       value: Temp Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539678722583971832, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 6161486533181678456, guid: 5b427eb54a08d2c42b755bb14aeef4ae, type: 3}
       propertyPath: m_Sprite
