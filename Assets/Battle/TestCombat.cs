@@ -54,9 +54,13 @@ public class TestCombat : MonoBehaviour
 
         
 
+    private bool BothAlive(){
+        return player.stat.hp > 0 && enemy.stat.hp > 0;
+    }
+
     public void basicAttack()
     {
-        if(!isAtacking && player.stat.hp > 0){
+        if(!isAtacking && BothAlive()){
             isAtacking = true;
             Debug.Log("Basic attack selected");
             enemy.stat.hp = damageStep(sword, player.stat, enemy.stat);
@@ -67,7 +71,7 @@ public class TestCombat : MonoBehaviour
 
     public void fireball()
     {
-        if(!isAtacking && player.stat.hp > 0){
+        if(!isAtacking && BothAlive()){
             isAtacking = true;
             Debug.Log("Fireball selected");
             enemy.stat.hp = damageStep(ignite, player.stat, enemy.stat);
@@ -78,7 +82,7 @@ public class TestCombat : MonoBehaviour
 
     public void recover()
     {
-        if(!isAtacking && player.stat.hp > 0){
+        if(!isAtacking && BothAlive()){
             isAtacking = true;
             Debug.Log("Heal selected");
             player.stat.hp = damageStep(heal, player.stat, player.stat);
@@ -89,7 +93,7 @@ public class TestCombat : MonoBehaviour
 
     public void run()
     {
-        if(!isAtacking && player.stat.hp > 0){
+        if(!isAtacking && BothAlive()){
             isAtacking = true;
             Debug.Log("Run selected");
             player.stat.hp = 0;
