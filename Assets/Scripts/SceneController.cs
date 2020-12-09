@@ -188,7 +188,7 @@ public class SceneController : MonoBehaviour
             }
             else
             {
-                Debug.Log("cannot find player");
+                //Debug.Log("cannot find player");
             }
             
             SceneManager.LoadScene(nextScene);
@@ -209,26 +209,26 @@ public class SceneController : MonoBehaviour
 
     //despawns any overworld item or overworld enemy with a true flag in the manifest
     private void Despawn(){
-        Debug.Log("calling despawn");
+        //Debug.Log("calling despawn");
         if(despawnManifest.ContainsKey(SceneManager.GetActiveScene().name)){
             Dictionary<Vector3, bool> sceneManifest = despawnManifest[SceneManager.GetActiveScene().name];
-            Debug.Log(sceneManifest.Count.ToString() + " Objects in scene manifest");
+            //Debug.Log(sceneManifest.Count.ToString() + " Objects in scene manifest");
             foreach(OverworldEnemy enemy in FindObjectsOfType<OverworldEnemy>()){
                 if(sceneManifest.ContainsKey(enemy.transform.position)){
-                    Debug.Log("despawn enemy");
+                    //Debug.Log("despawn enemy");
                     Destroy(enemy.gameObject);
                 }
             }
             foreach(OverWorldItem item in FindObjectsOfType<OverWorldItem>()){
                 if(sceneManifest.ContainsKey(item.transform.position)){
-                    Debug.Log("despawn item");
+                    //Debug.Log("despawn item");
                     Destroy(item.gameObject);
                 }
             }
         }
         else
         {
-            Debug.Log("cannot find scene manifest");
+            //Debug.Log("cannot find scene manifest");
         }
     }
     public void SetCurrentEnemy(Vector3 location){
@@ -241,9 +241,9 @@ public class SceneController : MonoBehaviour
 
     public void AddToManifest(Vector3 location, string sceneName){
         if(sceneName != null){
-            Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
+            //Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
             if(!despawnManifest.ContainsKey(sceneName)){
-                Debug.Log("Creating new scene manifest");
+                //Debug.Log("Creating new scene manifest");
                 despawnManifest[sceneName] = new Dictionary<Vector3, bool>();
             }
             Dictionary<Vector3, bool> sceneManifest = despawnManifest[sceneName];
@@ -251,7 +251,7 @@ public class SceneController : MonoBehaviour
         }
     }
     public void AddEnemyToManifest(){
-        Debug.Log("Adding enemy to despaning manifest. Scene:" + currentEnemy.Item1);
+        //Debug.Log("Adding enemy to despaning manifest. Scene:" + currentEnemy.Item1);
         AddToManifest(currentEnemy.Item2, currentEnemy.Item1);
     }
 }

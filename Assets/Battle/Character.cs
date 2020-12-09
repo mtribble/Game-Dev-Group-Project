@@ -8,12 +8,14 @@ public class Character
     public List<Attack> attacks;
     public List<Item> Equipment;
 
-    Sprite sprite;
+    public Sprite sprite = null;
+    public RuntimeAnimatorController animator = null;
 
-    public Character (Stats stats, List <Attack> attacks, Sprite sprite)
+    public Character (Stats stats, List <Attack> attacks, Sprite sprite = null, RuntimeAnimatorController animator = null)
     {
         this.stat = stats;
         this.sprite = sprite;
+        this.animator = animator;
         this.attacks = attacks;
         Equipment = new List<Item>();
     }

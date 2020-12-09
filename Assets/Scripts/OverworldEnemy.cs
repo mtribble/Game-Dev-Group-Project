@@ -28,12 +28,22 @@ public class OverworldEnemy : MonoBehaviour
         if(hasHealAttack){
             attacks.Add(heal);
         }
-        Sprite sprite = gameObject.GetComponent<SpriteRenderer>().sprite;
-        if(sprite == null){
-            Debug.Log("overworldenemy cannot find sprite");
-        }
-        character = new Character(new Stats(hp,maxhp,str,def,mag,magdef,speed), attacks, sprite);
+        SpriteRenderer sp = gameObject.GetComponent<SpriteRenderer>();
+        Animator am = gameObject.GetComponent<Animator>();
+        if(sp != null){
+            if(am != null){
+                character = new Character(new Stats(hp,maxhp,str,def,mag,magdef,speed), attacks, sp.sprite, am.runtimeAnimatorController);
+            }
 
+            else{
+                character = new Character(new Stats(hp,maxhp,str,def,mag,magdef,speed), attacks, sp.sprite);
+            }
+        }
+
+        else{
+             Debug.Log("cannot find sprite");
+        }
+            
     }
 
 }
