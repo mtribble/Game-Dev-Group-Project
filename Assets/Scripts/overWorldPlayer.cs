@@ -47,6 +47,9 @@ public class overWorldPlayer : MonoBehaviour
         if(col.gameObject.tag == "Enemy"){
             Debug.Log("Starting Battle");
             SceneController.Instance.SetCurrentEnemy(col.transform.position);
+            Character enemy = col.gameObject.GetComponent<OverworldEnemy>().character;
+            PlayerManager.Instance.player.stat.hp = PlayerManager.Instance.player.stat.maxhp;
+            PlayerManager.Instance.enemy = enemy;
             Destroy(col.gameObject);
             SceneController.Instance.LoadScene("Test_Battle", rb.velocity);
         }

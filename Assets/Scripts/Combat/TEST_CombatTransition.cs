@@ -39,13 +39,11 @@ public class TEST_CombatTransition : MonoBehaviour
         {
             if (PlayerManager.Instance.player.stat.hp <= 0)
             {
-                PlayerManager.Instance.player.stat.hp = PlayerManager.Instance.player.stat.maxhp;
                 hasGameEnded = true;
                 StartCoroutine(DisplayLoseAndLoad());
             }
             else if (PlayerManager.Instance.enemy.stat.hp <= 0)
             {
-                PlayerManager.Instance.player.stat.hp = PlayerManager.Instance.player.stat.maxhp;
                 hasGameEnded = true;
                 StartCoroutine(DisplayWinAndLoad());
             }

@@ -240,13 +240,15 @@ public class SceneController : MonoBehaviour
     }
 
     public void AddToManifest(Vector3 location, string sceneName){
-        Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
-         if(!despawnManifest.ContainsKey(sceneName)){
-            Debug.Log("Creating new scene manifest");
-            despawnManifest[sceneName] = new Dictionary<Vector3, bool>();
-         }
-        Dictionary<Vector3, bool> sceneManifest = despawnManifest[sceneName];
-        sceneManifest[location] = true;
+        if(sceneName != null){
+            Debug.Log("adding to manifest location:" + location.ToString() + " scene: " + sceneName);
+            if(!despawnManifest.ContainsKey(sceneName)){
+                Debug.Log("Creating new scene manifest");
+                despawnManifest[sceneName] = new Dictionary<Vector3, bool>();
+            }
+            Dictionary<Vector3, bool> sceneManifest = despawnManifest[sceneName];
+            sceneManifest[location] = true;
+        }
     }
     public void AddEnemyToManifest(){
         Debug.Log("Adding enemy to despaning manifest. Scene:" + currentEnemy.Item1);

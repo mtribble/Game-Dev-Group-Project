@@ -8,6 +8,16 @@ public class Character
     public List<Attack> attacks;
     public List<Item> Equipment;
 
+    Sprite sprite;
+
+    public Character (Stats stats, List <Attack> attacks, Sprite sprite)
+    {
+        this.stat = stats;
+        this.sprite = sprite;
+        this.attacks = attacks;
+        Equipment = new List<Item>();
+    }
+
     public Character (int hp, int maxhp, int str, int def, int mag, int magdef, int speed, List <Attack> attacks)
     {
         stat = new Stats(hp, maxhp, str, def, mag, magdef, speed);
