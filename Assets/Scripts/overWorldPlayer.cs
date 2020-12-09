@@ -46,9 +46,9 @@ public class overWorldPlayer : MonoBehaviour
 
         if(col.gameObject.tag == "Enemy"){
             Debug.Log("Starting Battle");
-            SceneController.Instance.LoadScene("Test_Battle", rb.velocity);
             SceneController.Instance.SetCurrentEnemy(col.transform.position);
             Destroy(col.gameObject);
+            SceneController.Instance.LoadScene("Test_Battle", rb.velocity);
         }
     }
 

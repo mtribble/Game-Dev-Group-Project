@@ -6,6 +6,7 @@ public class TEST_CombatTransition : MonoBehaviour
 {
     public Transform winDisplay, loseDisplay;
     public float delay;
+    bool hasGameEnded;
 
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,7 @@ public class TEST_CombatTransition : MonoBehaviour
         Transform canvas = GameObject.Find("Canvas").transform;
         winDisplay = canvas.Find("WinDisplay");
         loseDisplay = canvas.Find("LoseDisplay");
+        hasGameEnded = false;
     }
 
     IEnumerator DisplayWinAndLoad()
@@ -20,25 +22,34 @@ public class TEST_CombatTransition : MonoBehaviour
         winDisplay.gameObject.SetActive(true);
         SceneController.Instance.AddEnemyToManifest(); // despawns enemy upon return to overworld
         yield return new WaitForSecondsRealtime(delay);
-        SceneController.Instance.LoadScene("Test_Overworld", Vector2.zero);
+        SceneController.Instance.ReturnToPrevScene();
     }
 
     IEnumerator DisplayLoseAndLoad()
     {
         loseDisplay.gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(delay);
-        SceneController.Instance.LoadScene("Test_Overworld", Vector2.zero);
+        SceneController.Instance.ReturnToPrevScene();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(PlayerManager.Instance.player.stat.hp <= 0){
-            StartCoroutine(DisplayLoseAndLoad());
-        }
-        else if (PlayerManager.Instance.enemy.stat.hp <= 0)
+        if (!hasGameEnded)
         {
-            StartCoroutine(DisplayWinAndLoad());
+            if (PlayerManager.Instance.player.stat.hp <= 0)
+            {
+                PlayerManager.Instance.player.stat.hp = PlayerManager.Instance.player.stat.maxhp;
+                hasGameEnded = true;
+                StartCoroutine(DisplayLoseAndLoad());
+            }
+            else if (PlayerManager.Instance.enemy.stat.hp <= 0)
+            {
+                PlayerManager.Instance.player.stat.hp = PlayerManager.Instance.player.stat.maxhp;
+                hasGameEnded = true;
+                StartCoroutine(DisplayWinAndLoad());
+            }
         }
     }
+        
 }

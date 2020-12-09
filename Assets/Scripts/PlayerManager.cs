@@ -34,10 +34,13 @@ public class PlayerManager : MonoBehaviour
         player = new Character(100, 100, 20, 5, 20, 5, 15);
         inventory = new Inventory();
         equipment = new Equipment();
-        EquipDefaultItems();
     }
     #endregion
 
+    private void Start()
+    {
+        EquipDefaultItems();
+    }
 
     void EquipDefaultItems(){
         this.equipment.EquipItem(ItemDatabase.Instance.GetItem(5));

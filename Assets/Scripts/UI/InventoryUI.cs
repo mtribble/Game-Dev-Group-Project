@@ -26,6 +26,10 @@ public class InventoryUI : MonoBehaviour
         itemsBackground = transform.Find("ItemsBackground");
         equipmentBackground = transform.Find("EquipmentBackground");
         prefab = itemsBackground.Find("ItemUIPrefab");
+        
+    }
+    private void Start()
+    {
         SceneController.Instance.onInventoryDisplay += DrawInventory;
         SceneController.Instance.onInventoryClear += clear;
     }
