@@ -132,15 +132,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.98
+      value: -6.84
       objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877418, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.87
+      value: -1.07
       objectReference: {fileID: 0}
     - target: {fileID: 1604908988244877422, guid: f09a0291fb47b654e9883ccf93581023, type: 3}
       propertyPath: animator
@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3243033845682712164, guid: c777e4488bd408e418302c82c3d42ede, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3243033845682712164, guid: c777e4488bd408e418302c82c3d42ede, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10303,7 +10303,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1179619384
 PrefabInstance:
@@ -10314,11 +10314,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1636732766338493286, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 1636732766338493286, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.43
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1636732766338493286, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10358,11 +10358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1636732766338493286, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1636732766338493286, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1636732766338493288, guid: 8ea986e0b3801974a88a79ebcbe1e7ff, type: 3}
       propertyPath: toScene
