@@ -123,17 +123,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ac6d8cd706d51d4c80d55ddc3f146bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  maxhp: 0
-  str: 0
-  def: 0
-  mag: 0
-  magdef: 0
-  speed: 0
+  hp: 200
+  maxhp: 200
+  str: 15
+  def: 10
+  mag: 1
+  magdef: 5
+  speed: 10
   hasSwordAtack: 0
   hasBashAttack: 1
   hasIgniteAttack: 0
   hasHealAttack: 0
+  isBoss: 1
 --- !u!95 &2572150480505035291
 Animator:
   serializedVersion: 3

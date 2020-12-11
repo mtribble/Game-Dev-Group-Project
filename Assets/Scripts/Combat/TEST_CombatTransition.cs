@@ -22,7 +22,12 @@ public class TEST_CombatTransition : MonoBehaviour
         winDisplay.gameObject.SetActive(true);
         SceneController.Instance.AddEnemyToManifest(); // despawns enemy upon return to overworld
         yield return new WaitForSecondsRealtime(delay);
-        SceneController.Instance.ReturnToPrevScene();
+        if(PlayerManager.Instance.enemy.isBoss){
+            SceneController.Instance.LoadScene("Credits", new Vector3(0,0,0));
+        }else{
+            SceneController.Instance.ReturnToPrevScene();
+        }
+        
     }
 
     IEnumerator DisplayLoseAndLoad()

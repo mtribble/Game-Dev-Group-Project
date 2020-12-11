@@ -12,6 +12,7 @@ public class TestCombat : MonoBehaviour
         isAtacking = false;
         player = PlayerManager.Instance.player;
         enemy = PlayerManager.Instance.enemy;
+        player.AddEquipToStats(PlayerManager.Instance.equipment);
     }
 
     int damageStep(Attack move, Stats attacker, Stats defender)

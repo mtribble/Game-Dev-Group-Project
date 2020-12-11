@@ -5,7 +5,7 @@ using UnityEngine;
 public class OverworldEnemy : MonoBehaviour
 {
     [SerializeField] int hp =  0, maxhp = 0, str = 0, def = 0, mag = 0, magdef = 0, speed = 0;
-    [SerializeField] bool hasSwordAtack = false, hasBashAttack = true, hasIgniteAttack = false, hasHealAttack = false;
+    [SerializeField] bool hasSwordAtack = false, hasBashAttack = true, hasIgniteAttack = false, hasHealAttack = false, isBoss = false;
     public Character character;
     Attack sword = new Attack(false, 65);
     Attack bash = new Attack(false, 50);
@@ -43,7 +43,9 @@ public class OverworldEnemy : MonoBehaviour
         else{
              Debug.Log("cannot find sprite");
         }
-            
+        if(isBoss){
+            character.isBoss = true;
+        }
     }
 
 }

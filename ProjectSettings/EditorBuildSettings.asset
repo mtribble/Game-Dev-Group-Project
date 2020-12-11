@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage_3_House.unity
     guid: b9bf966f670d6d1429f228689463ab95
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: f690f4fbb30b5e54f828713d70576b32
   m_configObjects: {}
